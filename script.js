@@ -11,6 +11,25 @@
     }
 })();
 
+/* ─── Favicon váltás sötét / világos mód alapján ───
+   A felhasználó rendszerbeállítása (prefers-color-scheme) alapján cseréli
+   a favicont, és figyeli is, ha menet közben vált a beállítás. */
+(() => {
+    const setFavicon = (isDark) => {
+        let link = document.querySelector("link[rel~='icon']");
+        if (!link) {
+            link = document.createElement('link');
+            link.rel = 'icon';
+            document.head.appendChild(link);
+        }
+        link.href = isDark ? 'img/favi_dark.png' : 'img/favi_light.png';
+    };
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    setFavicon(mediaQuery.matches);
+    mediaQuery.addEventListener('change', (e) => setFavicon(e.matches));
+})();
+
 /* ─── Language switcher & mobile menu ───
    These run first and don't depend on Firebase, so a Firebase/network
    problem can never take them down with it. */
