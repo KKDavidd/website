@@ -406,7 +406,7 @@ function LoginPage({ onLogin, error }) {
         <div className="login-bg">
             <div className="login-card">
                 <div className="login-monogram">KD</div>
-                <div className="login-title">Kovács Dávid</div>
+                <div className="login-title">K. Dávid</div>
                 <div className="login-sub">Admin Panel</div>
                 <div className="login-divider" />
                 <form onSubmit={handleSubmit}>
@@ -517,7 +517,7 @@ function Dashboard({ user, onLogout }) {
             <header className="dash-header">
                 <div className="dash-header-left">
                     <div className="dash-logo-dot">KD</div>
-                    <span className="dash-header-title">Kovács Dávid</span>
+                    <span className="dash-header-title">K. Dávid</span>
                     <span className="dash-header-sep">|</span>
                     <span className="dash-header-sub">Admin Panel</span>
                 </div>
