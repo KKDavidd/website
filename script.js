@@ -22,7 +22,7 @@
             link.rel = 'icon';
             document.head.appendChild(link);
         }
-        link.href = isDark ? 'img/favi_dark.png' : 'img/favi_light.png';
+        link.href = isDark ? '/img/favi_dark.png' : '/img/favi_light.png';
     };
 
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
