@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kovács Dávid - Webfejlesztés & Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<nav>
+        <div class="logo">Kovács Dávid</div>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#home" class="lang-text" data-en="HOME" data-hu="FŐOLDAL">HOME</a></li>
+                <li><a href="#why-me" class="lang-text" data-en="WHY ME?" data-hu="MIÉRT ÉN?">WHY ME?</a></li>
+                <li><a href="#services" class="lang-text" data-en="SERVICES" data-hu="SZOLGÁLTATÁSOK">SERVICES</a></li>
+                <li><a href="#projects" class="lang-text" data-en="REFERENCES" data-hu="REFERENCIÁK">REFERENCES</a></li>
+                <li><a href="#contact" class="lang-text" data-en="CONTACT" data-hu="KAPCSOLAT">CONTACT</a></li>
+            </ul>
+            <button id="lang-btn">EN</button>
+            <button id="menu-toggle" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header id="home" class="hero fade-in">
+        <h1 class="lang-text" data-en="Need a Professional Website? You're in the right place." data-hu="Profi weboldalt szeretnél? Jó helyen jársz.">Need a Professional Website? You're in the right place.</h1>
+        <p class="lang-text" data-en="I build custom, lightning-fast websites that not only look great but actually generate more clients for your business." data-hu="Olyan egyedi, villámgyors weboldalakat építek, amelyek nemcsak jól néznek ki, de valóban több ügyfelet is hoznak a vállalkozásodnak.">I build custom, lightning-fast websites that not only look great but actually generate more clients for your business.</p>
+        <a href="#contact" class="btn lang-text" data-en="GET A FREE QUOTE" data-hu="INGYENES AJÁNLATKÉRÉS">GET A FREE QUOTE</a>
+    </header>
+
+    <section id="why-me" class="about-section">
+        <div class="about-content">
+            <h2 class="lang-text" data-en="YOUR SUCCESS IS MY PRIORITY" data-hu="A TE SIKERED A FŐ CÉLOM">YOUR SUCCESS IS MY PRIORITY</h2>
+            <p class="lang-text" data-en="I don't just write code. I focus on your business goals. Whether you need a modern landing page, a complex webshop, or a complete redesign, I deliver solutions that are mobile-friendly, optimized for Google, and ready to convert visitors into buyers." data-hu="Én nem csak kódolok, hanem a vállalkozásod üzleti céljait tartom szem előtt. Legyen szó egy modern bemutatkozó oldalról, egy komplex webáruházról vagy egy teljes arculatváltásról, olyan megoldást szállítok, ami mobilbarát, a Google is szereti, és a látogatókból vásárlókat csinál.">I don't just write code. I focus on your business goals. Whether you need a modern landing page, a complex webshop, or a complete redesign, I deliver solutions that are mobile-friendly, optimized for Google, and ready to convert visitors into buyers.</p>
+        </div>
+    </section>
+
+    <section id="services" class="skills-section">
+        <h2 class="lang-text" data-en="WHAT I DO" data-hu="MIBEN TUDOK SEGÍTENI?">WHAT I DO</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3 class="lang-text" data-en="Custom Web Development" data-hu="Egyedi Webfejlesztés">Custom Web Development</h3>
+                <p class="lang-text" data-en="Tailor-made websites built from scratch, perfectly matching your brand and vision." data-hu="A semmiből felépített, teljesen az arculatodra és az igényeidre szabott weboldalak.">Tailor-made websites built from scratch, perfectly matching your brand and vision.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-pen-to-square"></i>
+                <h3 class="lang-text" data-en="CMS Systems" data-hu="CMS Rendszerek">CMS Systems</h3>
+                <p class="lang-text" data-en="Easy-to-use content management systems empowering you to update your site effortlessly without any coding skills." data-hu="Könnyen kezelhető tartalomkezelő rendszerek (pl. WordPress), hogy programozói tudás nélkül is egyszerűen tudd frissíteni a weboldalad.">Easy-to-use content management systems empowering you to update your site effortlessly without any coding skills.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-mobile"></i>
+                <h3 class="lang-text" data-en="Responsive Design" data-hu="Reszponzív Dizájn">Responsive Design</h3>
+                <p class="lang-text" data-en="Every website I build looks and works perfectly on all devices — phones, tablets, and desktops alike." data-hu="Minden általam épített weboldal tökéletesen néz ki és működik minden eszközön — telefonon, tableten és asztali gépen egyaránt.">Every website I build looks and works perfectly on all devices — phones, tablets, and desktops alike.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-rocket"></i>
+                <h3 class="lang-text" data-en="Lightning Fast Speed" data-hu="Villámgyors Betöltés">Lightning Fast Speed</h3>
+                <p class="lang-text" data-en="Nobody likes waiting. I ensure your website loads instantly to keep your visitors engaged." data-hu="Senki sem szeret várni. Gondoskodom róla, hogy az oldalad azonnal betöltsön.">Nobody likes waiting. I ensure your website loads instantly to keep your visitors engaged.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2 class="lang-text" data-en="RECENT SUCCESS STORIES" data-hu="LEGÚJABB MUNKÁIM">RECENT SUCCESS STORIES</h2>
+        <div class="projects-grid">
+<!--            <div class="project-card">
+                <div class="project-img"><i class="fa-solid fa-building"></i></div>
+                <div class="project-info">
+                    <h3 class="lang-text" data-en="Corporate Landing Page" data-hu="Céges Bemutatkozó Oldal">Corporate Landing Page</h3>
+                    <p class="lang-text" data-en="A highly optimized lead-generation website designed to capture customer inquiries effectively." data-hu="Egy konverzióra optimalizált weboldal, amelynek fő célja az ajánlatkérések maximalizálása.">A highly optimized lead-generation website designed to capture customer inquiries effectively.</p>
+                    <div class="links">
+                        <a href="#">LIVE DEMO</a>
+                    </div>
+                </div>
+            </div>-->
+            <div class="project-card">
+                <div class="project-img"><i class="fa-solid fa-palette"></i></div>
+                <div class="project-info">
+                    <h3 class="lang-text" data-en="Katsumi's Art Portfolio" data-hu="Katsumi Művészeti Portfóliója">Katsumi's Art Portfolio</h3>
+                    <p class="lang-text" data-en="A beautifully responsive, CMS-equipped artist website built for my good friend Katsumi, allowing her stunning artworks to take center stage." data-hu="Egy kedves barátom, Katsumi számára készített reszponzív, CMS-sel felszerelt művészeti portfólió, ahol a lenyűgöző alkotásaié a főszerep.">A beautifully responsive, CMS-equipped artist website built for my good friend Katsumi, allowing her stunning artworks to take center stage.</p>
+                    <div class="links">
+                        <a href="https://www.katsumi.hu/" target="_blank" rel="noopener noreferrer">LIVE DEMO</a>
+                    </div>
+                </div>
+            </div>
+<!--            <div class="project-card">
+                <div class="project-img"><i class="fa-solid fa-utensils"></i></div>
+                <div class="project-info">
+                    <h3 class="lang-text" data-en="Restaurant Booking System" data-hu="Éttermi Foglalási Rendszer">Restaurant Booking System</h3>
+                    <p class="lang-text" data-en="An elegant digital menu and automated table reservation system for a local restaurant." data-hu="Elegáns digitális étlap és automatizált asztalfoglalási rendszer egy helyi étteremnek.">An elegant digital menu and automated table reservation system for a local restaurant.</p>
+                    <div class="links">
+                        <a href="#">LIVE DEMO</a>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2 class="lang-text" data-en="LET'S WORK TOGETHER" data-hu="DOLGOZZUNK EGYÜTT!">LET'S WORK TOGETHER</h2>
+        <p class="lang-text" style="text-align: center; margin-bottom: 30px; color: var(--accent);" data-en="Tell me about your ideas, and let's turn them into reality. I usually reply within 24 hours." data-hu="Írd meg nekem az elképzeléseidet, és valósítsuk meg őket! Általában 24 órán belül válaszolok.">Tell me about your ideas, and let's turn them into reality. I usually reply within 24 hours.</p>
+        <form>
+            <input type="text" class="lang-placeholder" data-en="Your Name" data-hu="Neved" placeholder="Your Name" required>
+            <input type="email" class="lang-placeholder" data-en="Your Email" data-hu="E-mail címed" placeholder="Your Email" required>
+            <textarea class="lang-placeholder" data-en="How can I help you?" data-hu="Miben tudok segíteni?" placeholder="How can I help you?" rows="5" required></textarea>
+            <button type="submit" class="btn lang-text" data-en="SEND MESSAGE" data-hu="ÜZENET ELKÜLDÉSE">SEND MESSAGE</button>
+        </form>
+    </section>
+
+    <footer>
+        <p class="lang-text" data-en="© 2026 Kovács Dávid | Helping businesses grow online." data-hu="© 2026 Kovács Dávid | Segítek a vállalkozásod digitális növekedésében.">© 2026 Kovács Dávid | Helping businesses grow online.</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
