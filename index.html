@@ -3,120 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K. Dávid - Webfejlesztés & Design</title>
+    <title>K. Dávid — Webfejlesztés & Design</title>
+    <meta name="description" content="Egyedi, gyors és mobilbarát weboldalak vállalkozásoknak. Nincs sablon, csak a te vállalkozásodra szabott megoldás.">
     <link rel="icon" href="/img/favi_light.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<nav>
-        <div class="logo">K. Dávid</div>
-        <div class="nav-right">
-            <ul class="nav-links">
-                <li><a href="#home" class="lang-text" data-en="HOME" data-hu="FŐOLDAL">HOME</a></li>
-                <li><a href="#why-me" class="lang-text" data-en="WHY ME?" data-hu="MIÉRT ÉN?">WHY ME?</a></li>
-                <li><a href="#services" class="lang-text" data-en="SERVICES" data-hu="SZOLGÁLTATÁSOK">SERVICES</a></li>
-                <li><a href="#projects" class="lang-text" data-en="REFERENCES" data-hu="REFERENCIÁK">REFERENCES</a></li>
-                <li><a href="#contact" class="lang-text" data-en="CONTACT" data-hu="KAPCSOLAT">CONTACT</a></li>
-            </ul>
-            <button id="lang-btn">EN</button>
-            <button id="menu-toggle" aria-label="Menu" aria-expanded="false">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+    <nav class="site-nav" aria-label="Main">
+        <a href="#home" class="brand">
+            <span class="brand-mark">KD</span>
+            <span class="brand-name lang-text" data-en="K. Dávid" data-hu="K. Dávid">K. Dávid</span>
+        </a>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home" class="lang-text" data-en="Home" data-hu="Főoldal">Home</a></li>
+            <li><a href="#why-me" class="lang-text" data-en="Why me" data-hu="Miért én?">Why me</a></li>
+            <li><a href="#services" class="lang-text" data-en="Services" data-hu="Szolgáltatások">Services</a></li>
+            <li><a href="#projects" class="lang-text" data-en="Work" data-hu="Referenciák">Work</a></li>
+            <li><a href="#contact" class="lang-text" data-en="Contact" data-hu="Kapcsolat">Contact</a></li>
+        </ul>
+
+        <div class="nav-tools">
+            <button id="lang-btn" type="button" aria-label="Switch language">
+                <i class="fa-solid fa-globe" aria-hidden="true"></i><span id="lang-btn-label">EN</span>
+            </button>
+            <button id="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
+</header>
 
-    <header id="home" class="hero fade-in">
-        <h1 class="lang-text" data-en="Need a Professional Website? You're in the right place." data-hu="Profi weboldalt szeretnél? Jó helyen jársz.">Need a Professional Website? You're in the right place.</h1>
-        <p class="lang-text" data-en="I build custom, lightning-fast websites that not only look great but actually generate more clients for your business." data-hu="Olyan egyedi, villámgyors weboldalakat építek, amelyek nemcsak jól néznek ki, de valóban több ügyfelet is hoznak a vállalkozásodnak.">I build custom, lightning-fast websites that not only look great but actually generate more clients for your business.</p>
-        <a href="#contact" class="btn lang-text" data-en="GET A FREE QUOTE" data-hu="INGYENES AJÁNLATKÉRÉS">GET A FREE QUOTE</a>
-    </header>
+<main id="main">
 
-    <section id="why-me" class="about-section">
-        <div class="about-content">
-            <h2 class="lang-text" data-en="YOUR SUCCESS IS MY PRIORITY" data-hu="A TE SIKERED A FŐ CÉLOM">YOUR SUCCESS IS MY PRIORITY</h2>
-            <p class="lang-text" data-en="I don't just write code. I focus on your business goals. Whether you need a modern landing page, a complex webshop, or a complete redesign, I deliver solutions that are mobile-friendly, optimized for Google, and ready to convert visitors into buyers." data-hu="Én nem csak kódolok, hanem a vállalkozásod üzleti céljait tartom szem előtt. Legyen szó egy modern bemutatkozó oldalról, egy komplex webáruházról vagy egy teljes arculatváltásról, olyan megoldást szállítok, ami mobilbarát, a Google is szereti, és a látogatókból vásárlókat csinál.">I don't just write code. I focus on your business goals. Whether you need a modern landing page, a complex webshop, or a complete redesign, I deliver solutions that are mobile-friendly, optimized for Google, and ready to convert visitors into buyers.</p>
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <p class="eyebrow lang-text" data-en="Independent web developer" data-hu="Független webfejlesztő">Independent web developer</p>
+            <h1 class="lang-text" data-en="Websites built like they matter to your business." data-hu="Weboldalak, amelyek tényleg számítanak a vállalkozásodnak.">Websites built like they matter to your business.</h1>
+            <p class="hero-lede lang-text" data-en="No page builders, no recycled templates. I write custom code for every project, so your site loads fast, ranks well, and turns visitors into clients." data-hu="Se oldalépítő, se újrahasznosított sablon. Minden projekthez egyedi kódot írok, hogy az oldalad gyorsan töltsön be, jól szerepeljen a Google-ben, és valódi ügyfeleket hozzon.">No page builders, no recycled templates. I write custom code for every project, so your site loads fast, ranks well, and turns visitors into clients.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary lang-text" data-en="Get a free quote" data-hu="Ingyenes ajánlatkérés">Get a free quote</a>
+                <a href="#projects" class="btn btn-ghost lang-text" data-en="See recent work" data-hu="Legutóbbi munkáim">See recent work</a>
+            </div>
+        </div>
+
+        <div class="hero-panel" aria-hidden="true">
+            <div class="panel-window">
+                <div class="panel-bar">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="panel-body">
+                    <p class="panel-line"><span class="panel-prompt">$</span> deploy --project client-site</p>
+                    <p class="panel-line panel-status"><span class="dot"></span> handwritten code</p>
+                    <p class="panel-line panel-status"><span class="dot"></span> mobile-first layout</p>
+                    <p class="panel-line panel-status"><span class="dot"></span> built for search engines</p>
+                    <p class="panel-line panel-cursor"><span class="panel-prompt">$</span> <span class="caret"></span></p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="services" class="skills-section">
-        <h2 class="lang-text" data-en="WHAT I DO" data-hu="MIBEN TUDOK SEGÍTENI?">WHAT I DO</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fa-solid fa-laptop-code"></i>
-                <h3 class="lang-text" data-en="Custom Web Development" data-hu="Egyedi Webfejlesztés">Custom Web Development</h3>
-                <p class="lang-text" data-en="Tailor-made websites built from scratch, perfectly matching your brand and vision." data-hu="A semmiből felépített, teljesen az arculatodra és az igényeidre szabott weboldalak.">Tailor-made websites built from scratch, perfectly matching your brand and vision.</p>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-pen-to-square"></i>
-                <h3 class="lang-text" data-en="CMS Systems" data-hu="CMS Rendszerek">CMS Systems</h3>
-                <p class="lang-text" data-en="Easy-to-use content management systems empowering you to update your site effortlessly without any coding skills." data-hu="Könnyen kezelhető tartalomkezelő rendszerek (pl. WordPress), hogy programozói tudás nélkül is egyszerűen tudd frissíteni a weboldalad.">Easy-to-use content management systems empowering you to update your site effortlessly without any coding skills.</p>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-mobile"></i>
-                <h3 class="lang-text" data-en="Responsive Design" data-hu="Reszponzív Dizájn">Responsive Design</h3>
-                <p class="lang-text" data-en="Every website I build looks and works perfectly on all devices — phones, tablets, and desktops alike." data-hu="Minden általam épített weboldal tökéletesen néz ki és működik minden eszközön — telefonon, tableten és asztali gépen egyaránt.">Every website I build looks and works perfectly on all devices — phones, tablets, and desktops alike.</p>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-rocket"></i>
-                <h3 class="lang-text" data-en="Lightning Fast Speed" data-hu="Villámgyors Betöltés">Lightning Fast Speed</h3>
-                <p class="lang-text" data-en="Nobody likes waiting. I ensure your website loads instantly to keep your visitors engaged." data-hu="Senki sem szeret várni. Gondoskodom róla, hogy az oldalad azonnal betöltsön.">Nobody likes waiting. I ensure your website loads instantly to keep your visitors engaged.</p>
+    <section id="why-me" class="why-section">
+        <div class="why-grid">
+            <h2 class="why-headline lang-text" data-en="Your success is the only metric I track." data-hu="A te sikered az egyetlen mérőszám, amit figyelek.">Your success is the only metric I track.</h2>
+            <div class="why-body">
+                <p class="lang-text" data-en="I don't just write code, I focus on your business goals. Whether you need a modern landing page, a complex webshop, or a full redesign, I deliver a site that's fast, easy to update, and ready to convert visitors into buyers." data-hu="Nemcsak kódolok, hanem a vállalkozásod üzleti céljait tartom szem előtt. Legyen szó egy modern bemutatkozó oldalról, egy komplex webáruházról vagy egy teljes arculatváltásról, olyan oldalt kapsz, ami gyors, könnyen frissíthető, és a látogatókból vásárlókat csinál.">I don't just write code, I focus on your business goals. Whether you need a modern landing page, a complex webshop, or a full redesign, I deliver a site that's fast, easy to update, and ready to convert visitors into buyers.</p>
+                <ul class="why-tags">
+                    <li class="lang-text" data-en="Custom code" data-hu="Egyedi kód">Custom code</li>
+                    <li class="lang-text" data-en="SEO-friendly" data-hu="SEO-barát">SEO-friendly</li>
+                    <li class="lang-text" data-en="Mobile-first" data-hu="Mobilbarát">Mobile-first</li>
+                </ul>
             </div>
         </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <p class="eyebrow lang-text" data-en="What I do" data-hu="Miben tudok segíteni">What I do</p>
+        <h2 class="lang-text" data-en="Four things I get right, every time." data-hu="Négy dolog, amit minden projektnél garantálok.">Four things I get right, every time.</h2>
+
+        <ul class="services-list">
+            <li class="service-row">
+                <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+                <div>
+                    <h3 class="lang-text" data-en="Custom web development" data-hu="Egyedi webfejlesztés">Custom web development</h3>
+                    <p class="lang-text" data-en="Tailor-made websites built from scratch, matching your brand and your goals." data-hu="A semmiből felépített, teljesen az arculatodra és az igényeidre szabott weboldalak.">Tailor-made websites built from scratch, matching your brand and your goals.</p>
+                </div>
+            </li>
+            <li class="service-row">
+                <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+                <div>
+                    <h3 class="lang-text" data-en="CMS systems" data-hu="CMS rendszerek">CMS systems</h3>
+                    <p class="lang-text" data-en="Content management set up so you can update your own site without touching code." data-hu="Tartalomkezelő rendszer beállítva, hogy programozói tudás nélkül is frissíteni tudd az oldalad.">Content management set up so you can update your own site without touching code.</p>
+                </div>
+            </li>
+            <li class="service-row">
+                <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
+                <div>
+                    <h3 class="lang-text" data-en="Responsive design" data-hu="Reszponzív dizájn">Responsive design</h3>
+                    <p class="lang-text" data-en="Every site I build looks and works right on phones, tablets, and desktops alike." data-hu="Minden weboldal tökéletesen néz ki és működik telefonon, tableten és asztali gépen egyaránt.">Every site I build looks and works right on phones, tablets, and desktops alike.</p>
+                </div>
+            </li>
+            <li class="service-row">
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                <div>
+                    <h3 class="lang-text" data-en="Fast by default" data-hu="Gyors alapból">Fast by default</h3>
+                    <p class="lang-text" data-en="Nobody waits for a slow site. I keep load times low so visitors stay." data-hu="Senki sem szeret várni. Az oldalad gyorsan tölt be, hogy a látogatók maradjanak.">Nobody waits for a slow site. I keep load times low so visitors stay.</p>
+                </div>
+            </li>
+        </ul>
     </section>
 
     <section id="projects" class="projects-section">
-        <h2 class="lang-text" data-en="RECENT SUCCESS STORIES" data-hu="LEGÚJABB MUNKÁIM">RECENT SUCCESS STORIES</h2>
+        <p class="eyebrow lang-text" data-en="Recent work" data-hu="Legutóbbi munkáim">Recent work</p>
+        <h2 class="lang-text" data-en="A project I'm proud to show." data-hu="Egy projekt, amire büszke vagyok.">A project I'm proud to show.</h2>
+
         <div class="projects-grid">
-<!--            <div class="project-card">
-                <div class="project-img"><i class="fa-solid fa-building"></i></div>
+            <!-- Corporate landing page case study — re-enable when live:
+            <article class="project-card">
+                <div class="project-top">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="project-img"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
                 <div class="project-info">
                     <h3 class="lang-text" data-en="Corporate Landing Page" data-hu="Céges Bemutatkozó Oldal">Corporate Landing Page</h3>
                     <p class="lang-text" data-en="A highly optimized lead-generation website designed to capture customer inquiries effectively." data-hu="Egy konverzióra optimalizált weboldal, amelynek fő célja az ajánlatkérések maximalizálása.">A highly optimized lead-generation website designed to capture customer inquiries effectively.</p>
                     <div class="links">
-                        <a href="#">LIVE DEMO</a>
+                        <a href="#">Live demo</a>
                     </div>
                 </div>
-            </div>-->
-            <div class="project-card">
-                <div class="project-img"><i class="fa-solid fa-palette"></i></div>
+            </article>
+            -->
+            <article class="project-card">
+                <div class="project-top" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="project-img"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
                 <div class="project-info">
                     <h3 class="lang-text" data-en="Katsumi's Art Portfolio" data-hu="Katsumi Művészeti Portfóliója">Katsumi's Art Portfolio</h3>
-                    <p class="lang-text" data-en="A beautifully responsive, CMS-equipped artist website built for my good friend Katsumi, allowing her stunning artworks to take center stage." data-hu="Egy kedves barátom, Katsumi számára készített reszponzív, CMS-sel felszerelt művészeti portfólió, ahol a lenyűgöző alkotásaié a főszerep.">A beautifully responsive, CMS-equipped artist website built for my good friend Katsumi, allowing her stunning artworks to take center stage.</p>
+                    <p class="lang-text" data-en="A responsive, CMS-equipped artist website built for my good friend Katsumi, letting her artwork take center stage." data-hu="Egy kedves barátom, Katsumi számára készített reszponzív, CMS-sel felszerelt művészeti portfólió, ahol a alkotásaié a főszerep.">A responsive, CMS-equipped artist website built for my good friend Katsumi, letting her artwork take center stage.</p>
                     <div class="links">
-                        <a href="https://www.katsumi.hu/" target="_blank" rel="noopener noreferrer">LIVE DEMO</a>
+                        <a href="https://www.katsumi.hu/" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-text" data-en="Live demo" data-hu="Élő oldal">Live demo</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
-<!--            <div class="project-card">
-                <div class="project-img"><i class="fa-solid fa-utensils"></i></div>
+            </article>
+            <!-- Restaurant booking system — re-enable when live:
+            <article class="project-card">
+                <div class="project-top">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="project-img"><i class="fa-solid fa-utensils" aria-hidden="true"></i></div>
                 <div class="project-info">
                     <h3 class="lang-text" data-en="Restaurant Booking System" data-hu="Éttermi Foglalási Rendszer">Restaurant Booking System</h3>
                     <p class="lang-text" data-en="An elegant digital menu and automated table reservation system for a local restaurant." data-hu="Elegáns digitális étlap és automatizált asztalfoglalási rendszer egy helyi étteremnek.">An elegant digital menu and automated table reservation system for a local restaurant.</p>
                     <div class="links">
-                        <a href="#">LIVE DEMO</a>
+                        <a href="#">Live demo</a>
                     </div>
                 </div>
-            </div>-->
+            </article>
+            -->
         </div>
     </section>
 
     <section id="contact" class="contact-section">
-        <h2 class="lang-text" data-en="LET'S WORK TOGETHER" data-hu="DOLGOZZUNK EGYÜTT!">LET'S WORK TOGETHER</h2>
-        <p class="lang-text" style="text-align: center; margin-bottom: 30px; color: var(--accent);" data-en="Tell me about your ideas, and let's turn them into reality. I usually reply within 24 hours." data-hu="Írd meg nekem az elképzeléseidet, és valósítsuk meg őket! Általában 24 órán belül válaszolok.">Tell me about your ideas, and let's turn them into reality. I usually reply within 24 hours.</p>
-        <form>
-            <input type="text" class="lang-placeholder" data-en="Your Name" data-hu="Neved" placeholder="Your Name" required>
-            <input type="email" class="lang-placeholder" data-en="Your Email" data-hu="E-mail címed" placeholder="Your Email" required>
-            <textarea class="lang-placeholder" data-en="How can I help you?" data-hu="Miben tudok segíteni?" placeholder="How can I help you?" rows="5" required></textarea>
-            <button type="submit" class="btn lang-text" data-en="SEND MESSAGE" data-hu="ÜZENET ELKÜLDÉSE">SEND MESSAGE</button>
+        <p class="eyebrow lang-text" data-en="Get in touch" data-hu="Vegyük fel a kapcsolatot">Get in touch</p>
+        <h2 class="lang-text" data-en="Let's work together." data-hu="Dolgozzunk együtt!">Let's work together.</h2>
+        <p class="contact-lede lang-text" data-en="Tell me about your idea and let's turn it into a real website. I usually reply within 24 hours." data-hu="Írd meg az elképzelésedet, és valósítsuk meg egy weboldalon. Általában 24 órán belül válaszolok.">Tell me about your idea and let's turn it into a real website. I usually reply within 24 hours.</p>
+
+        <form novalidate>
+            <div class="field">
+                <input type="text" id="contact-name" name="name" placeholder=" " required>
+                <label for="contact-name" class="lang-text" data-en="Your name" data-hu="Neved">Your name</label>
+            </div>
+            <div class="field">
+                <input type="email" id="contact-email" name="email" placeholder=" " required>
+                <label for="contact-email" class="lang-text" data-en="Your email" data-hu="E-mail címed">Your email</label>
+            </div>
+            <div class="field">
+                <textarea id="contact-message" name="message" rows="5" placeholder=" " required></textarea>
+                <label for="contact-message" class="lang-text" data-en="How can I help you?" data-hu="Miben tudok segíteni?">How can I help you?</label>
+            </div>
+            <button type="submit" class="btn btn-primary lang-text" data-en="Send message" data-hu="Üzenet elküldése">Send message</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
     </section>
 
-    <footer>
-        <p class="lang-text" data-en="© 2026 K. Dávid | Helping businesses grow online." data-hu="© 2026 K. Dávid | Segítek a vállalkozásod digitális növekedésében.">© 2026 K. Dávid | Helping businesses grow online.</p>
-    </footer>
+</main>
 
-    <script type="module" src="script.js"></script>
+<footer class="site-footer">
+    <p class="lang-text" data-en="© 2026 K. Dávid — helping businesses grow online." data-hu="© 2026 K. Dávid — segítek a vállalkozásod digitális növekedésében.">© 2026 K. Dávid — helping businesses grow online.</p>
+</footer>
+
+<script type="module" src="script.js"></script>
 </body>
 </html>

@@ -1,7 +1,3 @@
-/* ─── Vercel Web Analytics ───
-   Wrapped in an async IIFE + try/catch so that even if this fails to load
-   (blocked by an ad-blocker, offline, etc.) it can never break the rest
-   of the page. */
 (async () => {
     try {
         const { inject } = await import('@vercel/analytics');
@@ -11,9 +7,6 @@
     }
 })();
 
-/* ─── Favicon váltás sötét / világos mód alapján ───
-   A felhasználó rendszerbeállítása (prefers-color-scheme) alapján cseréli
-   a favicont, és figyeli is, ha menet közben vált a beállítás. */
 (() => {
     const setFavicon = (isDark) => {
         let link = document.querySelector("link[rel~='icon']");
@@ -30,27 +23,17 @@
     mediaQuery.addEventListener('change', (e) => setFavicon(e.matches));
 })();
 
-/* ─── Language switcher & mobile menu ───
-   These run first and don't depend on Firebase, so a Firebase/network
-   problem can never take them down with it. */
-
+const langBtnLabel = document.getElementById('lang-btn-label');
 const langBtn = document.getElementById('lang-btn');
 const langTexts = document.querySelectorAll('.lang-text');
-const langPlaceholders = document.querySelectorAll('.lang-placeholder');
 
 let currentLang = localStorage.getItem('portfolioLang') || 'en';
 
 function applyLanguage() {
-    langBtn.innerHTML = currentLang === 'en'
-        ? '<i class="fa-solid fa-globe" aria-hidden="true"></i> EN'
-        : '<i class="fa-solid fa-globe" aria-hidden="true"></i> HU';
+    langBtnLabel.textContent = currentLang === 'en' ? 'EN' : 'HU';
 
     langTexts.forEach(el => {
         el.textContent = el.getAttribute(`data-${currentLang}`);
-    });
-
-    langPlaceholders.forEach(el => {
-        el.setAttribute('placeholder', el.getAttribute(`data-${currentLang}`));
     });
 
     document.documentElement.lang = currentLang;
@@ -64,9 +47,8 @@ langBtn.addEventListener('click', () => {
     applyLanguage();
 });
 
-/* ─── Mobile menu toggle ─── */
 const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+const navLinks = document.getElementById('nav-links');
 
 if (menuToggle && navLinks) {
     menuToggle.addEventListener('click', () => {
@@ -74,7 +56,6 @@ if (menuToggle && navLinks) {
         menuToggle.setAttribute('aria-expanded', String(isOpen));
     });
 
-    // Close the menu after a nav link is clicked (mobile UX)
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('open');
@@ -83,16 +64,19 @@ if (menuToggle && navLinks) {
     });
 }
 
-/* ─── Contact form (Firebase + email API) ───
-   Wrapped so that any failure here (bad config, blocked request,
-   offline, etc.) can never break the language switcher or menu above. */
-
 function isValidEmail(value) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
 const contactForm = document.querySelector('form');
 const submitBtn = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
+const formStatus = document.getElementById('form-status');
+
+function setStatus(message) {
+    if (formStatus) {
+        formStatus.textContent = message;
+    }
+}
 
 async function setupContactForm() {
     if (!contactForm || !submitBtn) return;
@@ -115,25 +99,22 @@ async function setupContactForm() {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const inputs = e.target.querySelectorAll('input, textarea');
-        const name = inputs[0].value.trim();
-        const email = inputs[1].value.trim();
-        const message = inputs[2].value.trim();
+        const name = document.getElementById('contact-name').value.trim();
+        const email = document.getElementById('contact-email').value.trim();
+        const message = document.getElementById('contact-message').value.trim();
 
         if (!name || !email || !message) {
-            alert(currentLang === 'hu' ? 'Kérlek tölts ki minden mezőt.' : 'Please fill in every field.');
+            setStatus(currentLang === 'hu' ? 'Kérlek tölts ki minden mezőt.' : 'Please fill in every field.');
             return;
         }
 
         if (!isValidEmail(email)) {
-            alert(currentLang === 'hu' ? 'Kérlek adj meg egy érvényes e-mail címet.' : 'Please enter a valid email address.');
+            setStatus(currentLang === 'hu' ? 'Kérlek adj meg egy érvényes e-mail címet.' : 'Please enter a valid email address.');
             return;
         }
 
-        // Prevent double submits while the request is in flight
         submitBtn.disabled = true;
-        const originalLabel = submitBtn.textContent;
-        submitBtn.textContent = currentLang === 'hu' ? 'Küldés...' : 'Sending...';
+        setStatus(currentLang === 'hu' ? 'Küldés...' : 'Sending...');
 
         let savedToDb = false;
 
@@ -160,30 +141,25 @@ async function setupContactForm() {
                 throw new Error('A backend nem tudta elküldeni az e-mailt.');
             }
 
-            alert(currentLang === 'hu' ? 'Ajánlatkérés sikeresen elküldve! Hamarosan kereslek.' : 'Inquiry sent successfully! I will contact you soon.');
+            setStatus(currentLang === 'hu' ? 'Ajánlatkérés sikeresen elküldve! Hamarosan kereslek.' : 'Inquiry sent successfully! I will contact you soon.');
             e.target.reset();
         } catch (error) {
             console.error(error);
             if (savedToDb) {
-                // The message was captured even if the confirmation email failed —
-                // don't tell the user the whole thing failed.
-                alert(currentLang === 'hu'
+                setStatus(currentLang === 'hu'
                     ? 'Az üzeneted megérkezett, de a visszaigazoló e-mail küldése nem sikerült. Hamarosan mindenképp jelentkezem.'
                     : 'Your message was received, but the confirmation email could not be sent. I will still get back to you soon.');
                 e.target.reset();
             } else {
-                alert(currentLang === 'hu' ? 'Hiba történt a küldés során. Kérlek próbáld újra.' : 'Error sending message. Please try again.');
+                setStatus(currentLang === 'hu' ? 'Hiba történt a küldés során. Kérlek próbáld újra.' : 'Error sending message. Please try again.');
             }
         } finally {
             submitBtn.disabled = false;
-            submitBtn.textContent = originalLabel;
         }
     });
 }
 
 setupContactForm().catch(error => {
-    // If Firebase fails to load/init (network/ad-blocker/bad config),
-    // the rest of the page (language switcher, menu, content) still works.
     console.error('A kapcsolati űrlap háttérszolgáltatása nem tudott elindulni:', error);
     if (submitBtn) {
         submitBtn.disabled = true;
