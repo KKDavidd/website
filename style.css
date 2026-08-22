@@ -1,21 +1,3 @@
-:root {
-    --bg-dark: #2a211c;
-    --bg-medium: #4a3b32;
-    --bg-light: #8e7865;
-    --accent: #d4c3a3;
-    --text-light: #f5f0e6;
-    --text-dark: #1a1411;
-    --shadow: 0 10px 30px rgba(0,0,0,0.2);
-
-    --font-display: 'Fraunces', serif;
-    --font-body: 'Inter', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-
-    --border-soft: rgba(212, 195, 163, 0.16);
-    --radius: 4px;
-    --max: 1180px;
-}
-
 * {
     margin: 0;
     padding: 0;
