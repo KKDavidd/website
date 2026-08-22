@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin
 
-Sitemap: https://kovacsdavid.hu/sitemap.xml
+Sitemap: https://teoldalad.hu/sitemap.xml
