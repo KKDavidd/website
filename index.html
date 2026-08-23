@@ -24,10 +24,12 @@
     <link rel="icon" href="/img/favi_light.png">
     <link rel="stylesheet" href="tokens.css">
     <link rel="stylesheet" href="style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"></noscript>
 
     <script type="application/ld+json">
     {
@@ -90,6 +92,40 @@
 </head>
 <body>
 
+<svg style="display:none" aria-hidden="true">
+    <symbol id="icon-globe" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M3 12h18"/>
+        <path d="M12 3c3.2 2.4 3.2 15.6 0 18M12 3c-3.2 2.4-3.2 15.6 0 18"/>
+    </symbol>
+    <symbol id="icon-code" viewBox="0 0 24 24">
+        <path d="M9 8l-5 4 5 4M15 8l5 4-5 4"/>
+    </symbol>
+    <symbol id="icon-edit" viewBox="0 0 24 24">
+        <path d="M4 20l4-1L18 9.5a2 2 0 0 0-3-3L5 16l-1 4z"/>
+        <path d="M13.5 6.5l3 3"/>
+    </symbol>
+    <symbol id="icon-device" viewBox="0 0 24 24">
+        <rect x="7" y="2" width="10" height="20" rx="2"/>
+        <path d="M11 19h2"/>
+    </symbol>
+    <symbol id="icon-bolt" viewBox="0 0 24 24">
+        <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-art" viewBox="0 0 24 24">
+        <path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-.5-1.5-1-2 .2-2 1.5-2H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8z"/>
+        <circle cx="8.5" cy="10.5" r="1" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="8" r="1" fill="currentColor" stroke="none"/>
+        <circle cx="15.5" cy="10.5" r="1" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24">
+        <path d="M7 17 17 7M9 7h8v8"/>
+    </symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24">
+        <path d="M12 5v14M5 12h14"/>
+    </symbol>
+</svg>
+
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
@@ -110,7 +146,7 @@
 
         <div class="nav-tools">
             <button id="lang-btn" type="button" aria-label="Switch language">
-                <i class="fa-solid fa-globe" aria-hidden="true"></i><span id="lang-btn-label">HU</span>
+                <svg class="icon" aria-hidden="true"><use href="#icon-globe"></use></svg><span id="lang-btn-label">HU</span>
             </button>
             <button id="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
                 <span></span><span></span><span></span>
@@ -168,28 +204,28 @@
 
         <ul class="services-list">
             <li class="service-row">
-                <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+                <svg class="icon" aria-hidden="true"><use href="#icon-code"></use></svg>
                 <div>
                     <h3 class="lang-text" data-en="Custom web development" data-hu="Egyedi weboldal fejlesztés">Egyedi weboldal fejlesztés</h3>
                     <p class="lang-text" data-en="Tailor-made websites built from scratch, matching your brand and your goals." data-hu="A semmiből felépített, teljesen az arculatodra és az igényeidre szabott weboldalak.">A semmiből felépített, teljesen az arculatodra és az igényeidre szabott weboldalak.</p>
                 </div>
             </li>
             <li class="service-row">
-                <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+                <svg class="icon" aria-hidden="true"><use href="#icon-edit"></use></svg>
                 <div>
                     <h3 class="lang-text" data-en="CMS development" data-hu="CMS rendszer fejlesztés">CMS rendszer fejlesztés</h3>
                     <p class="lang-text" data-en="Content management set up so you can update your own site without touching code." data-hu="Tartalomkezelő rendszer beállítva, hogy programozói tudás nélkül is frissíteni tudd az oldalad.">Tartalomkezelő rendszer beállítva, hogy programozói tudás nélkül is frissíteni tudd az oldalad.</p>
                 </div>
             </li>
             <li class="service-row">
-                <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
+                <svg class="icon" aria-hidden="true"><use href="#icon-device"></use></svg>
                 <div>
                     <h3 class="lang-text" data-en="Responsive website design" data-hu="Reszponzív weboldal készítés">Reszponzív weboldal készítés</h3>
                     <p class="lang-text" data-en="Every site I build looks and works right on phones, tablets, and desktops alike." data-hu="Minden weboldal tökéletesen néz ki és működik telefonon, tableten és asztali gépen egyaránt.">Minden weboldal tökéletesen néz ki és működik telefonon, tableten és asztali gépen egyaránt.</p>
                 </div>
             </li>
             <li class="service-row">
-                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                <svg class="icon" aria-hidden="true"><use href="#icon-bolt"></use></svg>
                 <div>
                     <h3 class="lang-text" data-en="Fast by default" data-hu="Gyors betöltésű weboldal">Gyors betöltésű weboldal</h3>
                     <p class="lang-text" data-en="Nobody waits for a slow site. I keep load times low so visitors stay." data-hu="Senki sem szeret várni. Az oldalad gyorsan tölt be, hogy a látogatók maradjanak.">Senki sem szeret várni. Az oldalad gyorsan tölt be, hogy a látogatók maradjanak.</p>
@@ -208,7 +244,7 @@
                 <div class="project-top">
                     <span></span><span></span><span></span>
                 </div>
-                <div class="project-img"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+                <div class="project-img"><svg class="icon" aria-hidden="true"><use href="#icon-device"></use></svg></div>
                 <div class="project-info">
                     <h3 class="lang-text" data-en="Corporate Landing Page" data-hu="Céges Bemutatkozó Oldal">Corporate Landing Page</h3>
                     <p class="lang-text" data-en="A highly optimized lead-generation website designed to capture customer inquiries effectively." data-hu="Egy konverzióra optimalizált weboldal, amelynek fő célja az ajánlatkérések maximalizálása.">A highly optimized lead-generation website designed to capture customer inquiries effectively.</p>
@@ -222,13 +258,13 @@
                 <div class="project-top" aria-hidden="true">
                     <span></span><span></span><span></span>
                 </div>
-                <div class="project-img"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
+                <div class="project-img"><svg class="icon" aria-hidden="true"><use href="#icon-art"></use></svg></div>
                 <div class="project-info">
                     <h3 class="lang-text" data-en="Katsumi's Art Portfolio" data-hu="Katsumi Művészeti Portfóliója">Katsumi Művészeti Portfóliója</h3>
                     <p class="lang-text" data-en="A responsive, CMS-equipped artist website built for my good friend Katsumi, letting her artwork take center stage." data-hu="Egy kedves barátom, Katsumi számára készített reszponzív, CMS-sel felszerelt művészeti portfólió, ahol a alkotásaié a főszerep.">Egy kedves barátom, Katsumi számára készített reszponzív, CMS-sel felszerelt művészeti portfólió, ahol a alkotásaié a főszerep.</p>
                     <div class="links">
                         <a href="https://www.katsumi.hu/" target="_blank" rel="noopener noreferrer">
-                            <span class="lang-text" data-en="Live demo" data-hu="Élő oldal">Élő oldal</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                            <span class="lang-text" data-en="Live demo" data-hu="Élő oldal">Élő oldal</span> <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                         </a>
                     </div>
                 </div>
@@ -238,7 +274,7 @@
                 <div class="project-top">
                     <span></span><span></span><span></span>
                 </div>
-                <div class="project-img"><i class="fa-solid fa-utensils" aria-hidden="true"></i></div>
+                <div class="project-img"><svg class="icon" aria-hidden="true"><use href="#icon-device"></use></svg></div>
                 <div class="project-info">
                     <h3 class="lang-text" data-en="Restaurant Booking System" data-hu="Éttermi Foglalási Rendszer">Restaurant Booking System</h3>
                     <p class="lang-text" data-en="An elegant digital menu and automated table reservation system for a local restaurant." data-hu="Elegáns digitális étlap és automatizált asztalfoglalási rendszer egy helyi étteremnek.">An elegant digital menu and automated table reservation system for a local restaurant.</p>
@@ -259,28 +295,28 @@
             <details class="faq-item">
                 <summary>
                     <span class="lang-text" data-en="How much does a website cost?" data-hu="Mennyibe kerül egy weboldal készítése?">Mennyibe kerül egy weboldal készítése?</span>
-                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <svg class="icon" aria-hidden="true"><use href="#icon-plus"></use></svg>
                 </summary>
                 <p class="lang-text" data-en="The exact price depends on the scope of the project — a landing page is priced differently from a site with a CMS or a webshop. Send me your idea through the contact form and you'll get a concrete quote within 24 hours." data-hu="A pontos ár a projekt terjedelmétől függ — egy bemutatkozó oldal más árazású, mint egy CMS rendszerrel vagy webáruházzal bővített weboldal. Küldd el az elképzelésed a kapcsolati űrlapon, és 24 órán belül konkrét, egyedi ajánlatot kapsz.">A pontos ár a projekt terjedelmétől függ — egy bemutatkozó oldal más árazású, mint egy CMS rendszerrel vagy webáruházzal bővített weboldal. Küldd el az elképzelésed a kapcsolati űrlapon, és 24 órán belül konkrét, egyedi ajánlatot kapsz.</p>
             </details>
             <details class="faq-item">
                 <summary>
                     <span class="lang-text" data-en="How long does it take to build a website?" data-hu="Mennyi idő alatt készül el egy weboldal?">Mennyi idő alatt készül el egy weboldal?</span>
-                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <svg class="icon" aria-hidden="true"><use href="#icon-plus"></use></svg>
                 </summary>
                 <p class="lang-text" data-en="A simple landing page is usually ready in 1-2 weeks. A more complex site with a CMS or webshop takes longer. You'll always get an exact timeline as part of the quote." data-hu="Egy egyszerűbb bemutatkozó oldal jellemzően 1-2 hét alatt elkészül, egy CMS-sel vagy webáruházzal bővített, komplexebb weboldal ennél hosszabb időt igényel. Az ajánlatban mindig pontos határidőt is kapsz.">Egy egyszerűbb bemutatkozó oldal jellemzően 1-2 hét alatt elkészül, egy CMS-sel vagy webáruházzal bővített, komplexebb weboldal ennél hosszabb időt igényel. Az ajánlatban mindig pontos határidőt is kapsz.</p>
             </details>
             <details class="faq-item">
                 <summary>
                     <span class="lang-text" data-en="Why is custom code better than a template?" data-hu="Miért jobb az egyedi kódolású weboldal, mint egy sablon?">Miért jobb az egyedi kódolású weboldal, mint egy sablon?</span>
-                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <svg class="icon" aria-hidden="true"><use href="#icon-plus"></use></svg>
                 </summary>
                 <p class="lang-text" data-en="A template (like a WordPress theme) loads a lot of unnecessary code, which slows the site down and hurts your Google ranking. Custom code only includes what's actually needed, so it's faster, easier to maintain, and easier to optimize for SEO." data-hu="Egy sablon (pl. WordPress-sablon) sok felesleges kódot tölt be, ami lassítja az oldalt és rontja a Google-helyezést. Az egyedi kódolású weboldal csak azt tartalmazza, amire ténylegesen szükség van, ezért gyorsabb, könnyebben karbantartható és jobban optimalizálható SEO szempontból.">Egy sablon (pl. WordPress-sablon) sok felesleges kódot tölt be, ami lassítja az oldalt és rontja a Google-helyezést. Az egyedi kódolású weboldal csak azt tartalmazza, amire ténylegesen szükség van, ezért gyorsabb, könnyebben karbantartható és jobban optimalizálható SEO szempontból.</p>
             </details>
             <details class="faq-item">
                 <summary>
                     <span class="lang-text" data-en="Will my website be SEO-friendly?" data-hu="SEO-barát lesz a weboldalam?">SEO-barát lesz a weboldalam?</span>
-                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <svg class="icon" aria-hidden="true"><use href="#icon-plus"></use></svg>
                 </summary>
                 <p class="lang-text" data-en="Yes. Every website is built with semantic HTML, fast load times, a mobile-friendly layout, and the basics Google Search Console expects — sitemap, robots.txt, and proper meta data." data-hu="Igen. Minden weboldal szemantikus HTML-lel, gyors betöltési idővel, mobilbarát elrendezéssel és a Google Search Console-hoz illeszkedő alapbeállításokkal (sitemap, robots.txt, meta adatok) készül.">Igen. Minden weboldal szemantikus HTML-lel, gyors betöltési idővel, mobilbarát elrendezéssel és a Google Search Console-hoz illeszkedő alapbeállításokkal (sitemap, robots.txt, meta adatok) készül.</p>
             </details>

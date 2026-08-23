@@ -20,6 +20,17 @@ button {
     outline-offset: 3px;
 }
 
+.icon {
+    width: 1em;
+    height: 1em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vertical-align: -0.125em;
+}
+
 .brand-mark {
     font-family: var(--font-mono);
     font-weight: 600;

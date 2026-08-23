@@ -69,6 +69,17 @@ a {
     margin-bottom: 14px;
 }
 
+.icon {
+    width: 1em;
+    height: 1em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vertical-align: -0.125em;
+}
+
 /* ── Header ── */
 
 .site-header {
@@ -502,8 +513,8 @@ main section > h2,
 }
 
 .projects-section > .eyebrow {
-    color: var(--text-dark);
-    opacity: 0.75;
+    color: #14100c;
+    opacity: 1;
 }
 
 .projects-grid {

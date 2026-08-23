@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-import { getFirestore, collection, getDocs, deleteDoc, doc, orderBy, query } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
-import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, getDocs, deleteDoc, doc, orderBy, query } from "firebase/firestore";
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAafCFyainmMmbaVt4Vl_EHnjgRpFJgfU0",
@@ -16,6 +16,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
+
+function Icon({ name }) {
+    return (
+        <svg className="icon" aria-hidden="true">
+            <use href={`#icon-${name}`}></use>
+        </svg>
+    );
+}
 
 function LoginPage({ onLogin, error }) {
     const [email, setEmail] = useState("");
@@ -65,7 +73,7 @@ function LoginPage({ onLogin, error }) {
                         </div>
                         {error && (
                             <div className="login-error" role="alert">
-                                <i className="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+                                <Icon name="warning" />
                                 <span>{error}</span>
                             </div>
                         )}
@@ -109,7 +117,7 @@ function MessageCard({ msg, onDelete }) {
                 </span>
                 <span className="msg-toggle-right">
                     <span className="msg-date">{dateStr}</span>
-                    <i className={`fa-solid fa-chevron-down msg-chevron ${expanded ? "open" : ""}`} aria-hidden="true"></i>
+                    <span className={`msg-chevron ${expanded ? "open" : ""}`}><Icon name="chevron-down" /></span>
                 </span>
             </button>
             {expanded && (
@@ -118,10 +126,10 @@ function MessageCard({ msg, onDelete }) {
                     <div className="msg-text">{msg.message}</div>
                     <div className="msg-actions">
                         <a href={`mailto:${msg.email}?subject=Re: Megkeresés`} className="reply-btn">
-                            <i className="fa-solid fa-reply" aria-hidden="true"></i> Válasz küldése
+                            <Icon name="reply" /> Válasz küldése
                         </a>
                         <button type="button" className="delete-btn" onClick={handleDelete} disabled={deleting}>
-                            <i className="fa-solid fa-trash" aria-hidden="true"></i> {deleting ? "Törlés..." : "Törlés"}
+                            <Icon name="trash" /> {deleting ? "Törlés..." : "Törlés"}
                         </button>
                     </div>
                 </div>
@@ -176,7 +184,7 @@ function Dashboard({ user, onLogout }) {
             <main className="dash-main">
                 <div className="stats-row">
                     <div className="stat-card">
-                        <span className="stat-icon" aria-hidden="true"><i className="fa-solid fa-envelope"></i></span>
+                        <span className="stat-icon" aria-hidden="true"><Icon name="mail" /></span>
                         <div>
                             <span className="stat-num">{loading ? "–" : messages.length}</span>
                             <span className="stat-label">Összes üzenet</span>
@@ -187,7 +195,7 @@ function Dashboard({ user, onLogout }) {
                 <div className="section-bar">
                     <span className="section-title">Beérkező üzenetek</span>
                     <button type="button" className="refresh-btn" onClick={fetchMessages}>
-                        <i className="fa-solid fa-arrow-rotate-right" aria-hidden="true"></i> Frissítés
+                        <Icon name="refresh" /> Frissítés
                     </button>
                 </div>
 
@@ -195,7 +203,7 @@ function Dashboard({ user, onLogout }) {
                     <p className="loading-state" role="status" aria-live="polite">Betöltés...</p>
                 ) : messages.length === 0 ? (
                     <div className="empty-state">
-                        <div className="empty-icon" aria-hidden="true"><i className="fa-solid fa-inbox"></i></div>
+                        <div className="empty-icon" aria-hidden="true"><Icon name="inbox" /></div>
                         <div className="empty-title">Nincs üzenet</div>
                         <div className="empty-sub">Ha valaki küld egy ajánlatkérést, itt fog megjelenni.</div>
                     </div>

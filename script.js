@@ -78,24 +78,35 @@ function setStatus(message) {
     }
 }
 
-async function setupContactForm() {
-    if (!contactForm || !submitBtn) return;
+// Firebase is ~100 KiB. Instead of pulling it in on every page load, it's
+// fetched only the moment someone actually submits the contact form, and
+// only once (the promise is cached so a second submit reuses the same app).
+let firebasePromise = null;
 
-    const { initializeApp } = await import("https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js");
-    const { getFirestore, collection, addDoc } = await import("https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js");
+function loadFirebase() {
+    if (!firebasePromise) {
+        firebasePromise = (async () => {
+            const { initializeApp } = await import('firebase/app');
+            const { getFirestore, collection, addDoc } = await import('firebase/firestore');
 
-    const firebaseConfig = {
-        apiKey: "AIzaSyAafCFyainmMmbaVt4Vl_EHnjgRpFJgfU0",
-        authDomain: "crazyportfoliom.firebaseapp.com",
-        projectId: "crazyportfoliom",
-        storageBucket: "crazyportfoliom.firebasestorage.app",
-        messagingSenderId: "679897293455",
-        appId: "1:679897293455:web:6b445c414e297bd45006fa"
-    };
+            const firebaseConfig = {
+                apiKey: "AIzaSyAafCFyainmMmbaVt4Vl_EHnjgRpFJgfU0",
+                authDomain: "crazyportfoliom.firebaseapp.com",
+                projectId: "crazyportfoliom",
+                storageBucket: "crazyportfoliom.firebasestorage.app",
+                messagingSenderId: "679897293455",
+                appId: "1:679897293455:web:6b445c414e297bd45006fa"
+            };
 
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+            return { db, collection, addDoc };
+        })();
+    }
+    return firebasePromise;
+}
 
+if (contactForm && submitBtn) {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -119,6 +130,8 @@ async function setupContactForm() {
         let savedToDb = false;
 
         try {
+            const { db, collection, addDoc } = await loadFirebase();
+
             await addDoc(collection(db, "messages"), {
                 name,
                 email,
@@ -158,13 +171,3 @@ async function setupContactForm() {
         }
     });
 }
-
-setupContactForm().catch(error => {
-    console.error('A kapcsolati űrlap háttérszolgáltatása nem tudott elindulni:', error);
-    if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.title = currentLang === 'hu'
-            ? 'Az űrlap jelenleg nem elérhető. Kérlek írj e-mailt közvetlenül.'
-            : 'The form is currently unavailable. Please email directly instead.';
-    }
-});
