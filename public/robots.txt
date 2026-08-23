@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin
 
-Sitemap: https://teoldalad.hu/sitemap.xml
+Sitemap: https://www.teoldalad.hu/sitemap.xml
