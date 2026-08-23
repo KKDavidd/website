@@ -27,7 +27,7 @@ const langBtnLabel = document.getElementById('lang-btn-label');
 const langBtn = document.getElementById('lang-btn');
 const langTexts = document.querySelectorAll('.lang-text');
 
-let currentLang = localStorage.getItem('portfolioLang') || 'en';
+let currentLang = localStorage.getItem('portfolioLang') || 'hu';
 
 function applyLanguage() {
     langBtnLabel.textContent = currentLang === 'en' ? 'EN' : 'HU';

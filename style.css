@@ -608,6 +608,69 @@ main section > h2,
     color: var(--text-light);
 }
 
+/* ── FAQ ── */
+
+.faq-section {
+    background-color: var(--bg-medium);
+}
+
+.faq-section > .eyebrow,
+.faq-section > h2 {
+    max-width: var(--max);
+    margin: 0 auto;
+}
+
+.faq-list {
+    max-width: 760px;
+    margin: 46px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-item {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-soft);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 24px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary i {
+    color: var(--accent);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.faq-item[open] summary i {
+    transform: rotate(45deg);
+}
+
+.faq-item p {
+    padding: 0 24px 22px;
+    max-width: 640px;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    opacity: 0.85;
+}
+
 /* ── Contact ── */
 
 .contact-section {
